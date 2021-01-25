@@ -81,7 +81,7 @@
 //Polling Sensors
 
 //Interrupt Sensors 
-st::IS_Contact sensor1("contact", PIN_CONTACT, LOW, true);
+st::IS_Contact sensor1("contact", PIN_CONTACT, LOW, true, 20000);
 
 //Executors
 
@@ -151,7 +151,7 @@ void loop()
   else if (!sensor1.getStatus() && lastStatus)
   {
       //NORMAL (Green)
-      st::Everything::setLED(0,2,0);
+      st::Everything::setLED(0,2,0);  
       lastStatus = false;
   }
   
